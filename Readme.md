@@ -1,5 +1,5 @@
-#Vet-clinic-database
-
+<h1 align ="center" >Vet-clinic-database </h1>
+<a name="readme-top"></a>
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -20,7 +20,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖Vet-clinic-database <a name="about-project"></a>
 
 **Vet-clinic-database**is a project aimed at creating a structured database for a veterinarian clinic. It utilizes a relational database to efficiently manage and organize animal information.
 
