@@ -6,7 +6,17 @@ SELECT name, escape_attempts FROM animals WHERE weight_kg > 10.5;
 SELECT name FROM animals WHERE neutered = TRUE;
 SELECT name FROM animals WHERE name!='Gabumon';
 SELECT name FROM animals WHERE weight_kg>=10.5 AND weight_kg <= 17.3;
+
+
 BEGIN;
+UPDATE animals SET species = 'unspecified';
+ROLLBACK;
+UPDATE animals SET species = 'degimon' WHERE name LIKE '%mon';
+UPDATE animals SET species = 'pokimon' WHERE species IS NULL;
+DELETE FROM animals;
+ROLLBACK;
+
+
 DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 SAVEPOINT delete_youngest_animal;
 UPDATE animals
