@@ -45,3 +45,6 @@ SET owner_id = (
     ELSE 'Jodie Whittaker'
   END
 );
+
+
+-- Vet clinic database: add "join table" for visits

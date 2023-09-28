@@ -26,3 +26,5 @@ CREATE TABLE species (
 ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE ADD COLUMN species_id INTEGER REFERENCES species (id);
 ALTER TABLE animals ADD COLUMN owner_id INTEGER REFERENCES owners(id);
+
+-- Vet clinic database: add "join table" for visits
