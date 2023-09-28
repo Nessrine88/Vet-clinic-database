@@ -37,13 +37,6 @@ SELECT AVG(escape_attempts) FROM animals WHERE date_of_birth IS BETWEEN '1990-01
 GROUP BY species;
 
 
--- update animals species_id
-UPDATE animals
-SET species_id = CASE
-    WHEN name LIKE '%mon' THEN 1
-    ELSE 2 
-END;
-
 -- queries
 SELECT a.name AS animal_name
 FROM animals AS a
@@ -82,5 +75,74 @@ GROUP BY o.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
 
--- Vet clinic database: add "join table" for visits
+-- Vet clinic database: add "join table" for visits/ queries
+
+SELECT a.name AS last_animal_seen
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'William Tatcher'
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(DISTINCT v.animal_id) AS num_animals_seen
+FROM visits v
+JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Stephanie Mendez';
+
+SELECT vt.name AS vet_name, COALESCE(s.name, 'No Specialty') AS specialty
+FROM vets vt
+LEFT JOIN specializations sp ON vt.id = sp.vet_id
+LEFT JOIN species s ON sp.species_id = s.id;
+
+SELECT a.name AS animal_name
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Stephanie Mendez'
+  AND v.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT a.name AS most_visited_animal, COUNT(*) AS visit_count
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+GROUP BY a.name
+ORDER BY visit_count DESC
+LIMIT 1;
+
+SELECT a.name AS first_animal_seen
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Maisy Smith'
+ORDER BY v.visit_date ASC
+LIMIT 1;
+
+SELECT a.name AS animal_name, vt.name AS vet_name, v.visit_date AS visit_date
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(*) AS num_visits_without_specialty
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+LEFT JOIN specializations sp ON vt.id = sp.vet_id AND sp.species_id = a.species_id
+WHERE sp.species_id IS NULL;
+
+
+SELECT s.name AS recommended_specialty
+FROM visits v
+JOIN animals a ON v.animal_id = a.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+JOIN specializations sp ON vt.id = sp.vet_id
+JOIN species s ON sp.species_id = s.id
+WHERE vt.name = 'Maisy Smith'
+GROUP BY s.name
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+
+
 

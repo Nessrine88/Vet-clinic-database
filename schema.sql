@@ -28,3 +28,22 @@ ALTER TABLE ADD COLUMN species_id INTEGER REFERENCES species (id);
 ALTER TABLE animals ADD COLUMN owner_id INTEGER REFERENCES owners(id);
 
 -- Vet clinic database: add "join table" for visits
+
+CREATE TABLE vets(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age INTEGER,
+    date_of_graduation DATE
+);
+
+CREATE TABLE specializations (
+    specialization_id SERIAL PRIMARY KEY,
+    vet_id INTEGER REFERENCES vets(id),
+    species_id INTEGER REFERENCES species(id)
+);
+
+CREATE TABLE visits (
+    visit_id SERIAL PRIMARY KEY,
+    vet_id INTEGER REFERENCES vets(id),
+    animal_id INTEGER REFERENCES animals(animal_id)
+);
