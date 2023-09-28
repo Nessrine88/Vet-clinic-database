@@ -117,8 +117,6 @@ You can now use the SQL code from the repository to work with the my_database yo
 
 <!-- FUTURE FEATURES -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -148,11 +146,6 @@ I would like to express my sincere gratitude to [Microverse](https://www.microve
 ### Microverse
 
 I am grateful to the Microverse community for creating an immersive and collaborative learning environment. The Microverse curriculum, peer-to-peer structure, and code reviews have been pivotal in honing my coding skills. Special thanks to the dedicated team of instructors, mentors, and fellow students who have shared their knowledge and insights.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
