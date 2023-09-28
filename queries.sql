@@ -36,14 +36,6 @@ SELECT MAX(weight_kg), MIN(weight_kg) FROM animals GROUP BY species;
 SELECT AVG(escape_attempts) FROM animals WHERE date_of_birth IS BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY species;
 
-
--- update animals species_id
-UPDATE animals
-SET species_id = CASE
-    WHEN name LIKE '%mon' THEN 1
-    ELSE 2 
-END;
-
 -- queries
 SELECT a.name AS animal_name
 FROM animals AS a
