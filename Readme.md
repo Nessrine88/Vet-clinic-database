@@ -19,7 +19,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖Vet-clinic-database <a name="about-project"></a>
+# About the project<a name="about-project"></a>
 
 **Vet-clinic-database**is a project aimed at creating a structured database for a veterinarian clinic. It utilizes a relational database to efficiently manage and organize animal information.
 
