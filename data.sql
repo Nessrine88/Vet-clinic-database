@@ -31,6 +31,14 @@ INSERT INTO species (name) VALUES
 ('Pokemon'),
 ('Digimon');
 
+-- update animals species_id
+UPDATE animals
+SET species_id = CASE
+    WHEN name LIKE '%mon' THEN 1
+    ELSE 2 
+END;
+
+
 -- Update owner_id for animals based on owner's name
 UPDATE animals
 SET owner_id = (
@@ -46,12 +54,7 @@ SET owner_id = (
   END
 );
 
--- update animals species_id
-UPDATE animals
-SET species_id = CASE
-    WHEN name LIKE '%mon' THEN 1
-    ELSE 2 
-END;
+
 
 -- Vet clinic database: add "join table" for visits
 
@@ -93,3 +96,4 @@ VALUES
   ((SELECT id FROM vets WHERE name = 'Maisy Smith'), (SELECT animal_id FROM animals WHERE name = 'Boarmon'), '2020-08-03'),
   ((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT animal_id FROM animals WHERE name = 'Blossom'), '2020-05-24'),
   ((SELECT id FROM vets WHERE name = 'William Tatcher'), (SELECT animal_id FROM animals WHERE name = 'Blossom'), '2021-01-11');
+
