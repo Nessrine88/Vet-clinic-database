@@ -128,8 +128,6 @@ Feel free to check the [issues page](../../issues/).
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-## Acknowledgments
-
 I would like to express my sincere gratitude to [Microverse](https://www.microverse.org/) 
 
 ### Microverse
