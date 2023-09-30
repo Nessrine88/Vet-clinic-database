@@ -1,6 +1,6 @@
 <h1 align ="center" >Vet-clinic-database </h1>
 <a name="readme-top"></a>
-# 📗 Table of Contents
+<h2>📗 Table of Contents</h2>
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
